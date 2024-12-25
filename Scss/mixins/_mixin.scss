@@ -1,5 +1,19 @@
+@use 'sass:color';
 @use '../variables/fonts' as fonts;
-@use '../variables/color' as color;
+@use '../variables/color' as c;
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == tablet {
+        @media screen and (max-width: 768px) {
+            @content;
+        }
+    }
+    @if $breakpoint == mobile {
+        @media screen and (max-width: 480px) {
+            @content;
+        }
+    }
+}
 
 @mixin header-container($justify-content: center, $align-items: center, $flex-direction: row, $flex-wrap: wrap){
     display: flex;
@@ -30,7 +44,7 @@
     font-size: 48px;
     line-height: 26px;
     letter-spacing: 4.8px;
-    color: color.$white;
+    color: c.$white;
     text-align: center;
 }
 
@@ -38,7 +52,7 @@
     font-family: fonts.$aleo;
     font-size: 36px;
     line-height: 26px;
-    color: color.$white;
+    color: c.$white;
 }
 
 @mixin h3{
@@ -47,7 +61,7 @@
     font-size: 24px;
     line-height: 26px;
     letter-spacing: 2.4px;
-    color: color.$white;
+    color: c.$white;
 }
 
 @mixin p{
@@ -55,7 +69,7 @@
     font-size: 16px;
     line-height: 26px;
     letter-spacing: 1.6px;
-    color: color.$paragraph;
+    color: c.$paragraph;
 }
 
 @mixin btn{
@@ -63,16 +77,16 @@
     min-height: 63px;
     width: 100%;
     border: none;
-    background: color.$btn;
+    background: c.$btn;
     font-family: fonts.$aleo;
     font-size: 16px;
     line-height: 26px;
     letter-spacing: 1.2px;
-    color: color.$white;
+    color: c.$white;
     cursor: pointer;
     transition: all 0.3s ease;
 
     &:hover{
-        background: color.adjust(color.$btn, $lightness: -10%);
+        background: color.adjust(c.$btn, $lightness: -10%);
     }
 }

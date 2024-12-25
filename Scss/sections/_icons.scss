@@ -6,51 +6,46 @@
     max-width: 100vw;
     width: 100%;
     min-height: 340px;
-    background-color: color.$navbar;
-    padding: 2rem 0;
+    background-color: color.$icons-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .content {
-        @include flex(row, space-around, center);
-        max-width: 1110px;
+        @include m.container(space-between, center, row, nowrap);
+        max-width: 1046px;
+        min-height: 176px;
         width: 100%;
-        margin: auto;
-        padding: 2rem;
-        flex-wrap: wrap;
-        gap: 2rem;
-
+        margin:0 auto;
+       
+        
         .card {
-            @include flex(column, center, center);
-            gap: 1rem;
-            text-align: center;
+           @include m.flex(column, center, center);
+           margin: 0 auto;
+           text-align: center;
+            
+              i{
+                font-size: 36px;
+                margin-bottom: 10px; 
+              }  
 
-            .fa-solid, .fa-regular {
-                font-size: 3rem;
-                color: $white;
-
-                &.blue {
-                    color: #00A2FF;
+            
+                .blue {
+                    color: color.$blue;
                 }
 
-                &.red {
-                    color: #FF0000;
+                .red {
+                    color: color.$red;
                 }
-            }
+            
 
             &-text {
-                font-family: $aleo;
-                font-size: 36px;
-                color: $white;
+               @include m.h2;
+               color: color.$paragraph;
+                
             }
+            
         }
     }
 
-    @include responsive(mobile) {
-        .content {
-            flex-direction: column;
-            
-            .card {
-                width: 100%;
-            }
-        }
     }
-}

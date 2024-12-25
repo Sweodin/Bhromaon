@@ -1,25 +1,21 @@
  /*----- Variables -----*/
 
- @use 'variables/color' as color;
- @use 'variables/fonts' as fonts;
+ @use 'variables/_color' as color;
+ @use 'variables/_fonts' as fonts;
  
   /*----- Mixins -----*/
 
- @use 'mixins/mixin' as m;
- 
-  /*----- Normalize -----*/
-
- @use 'normalize';
+ @use 'mixins/_mixin' as m;
  
   /*----- Sections -----*/
 
- @use 'sections/header' as header;
- @use 'sections/whyus' as whyus;
- @use 'sections/icons' as icons;
- @use 'sections/house' as house;
- @use 'sections/background-house' as background-house;
- @use 'sections/review' as review;
- @use 'sections/footer' as footer;
+ @use 'sections/_header' as header;
+ @use 'sections/_why-us' as why-us;
+ @use 'sections/_icons' as icons;
+ @use 'sections/_house' as house;
+ @use 'sections/_background-house' as background-house;
+ @use 'sections/_review' as review;
+ @use 'sections/_footer' as footer;
 
  * {
      margin: 0;
@@ -28,7 +24,7 @@
  }
  
  body {
-     max-width: 1700px;
+     max-width: 1800px;
      width: 100%;
      margin: auto;
  }

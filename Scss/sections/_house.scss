@@ -6,62 +6,59 @@
     max-width: 100vw;
     width: 100%;
     min-height: 700px;
-    background-image: url(../image/spain-bg-l.png);
+    background-image: url(/img/house-pool.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 4rem 0;
+    display: flex;
+    
 
     .content-container {
-        @include flex(row, flex-end, center);
-        max-width: 1110px;
+        display: flex;
+        max-width: 1120px;
+        min-height: 600px;
         width: 100%;
         margin: auto;
-        padding: 0 2rem;
+        
 
         .box {
             max-width: 543px;
+            min-height: 374px;
             width: 100%;
-            background-color: $box;
-            padding: 2rem;
+            align-self: flex-end;
+            background-color: color.$box;
+            margin-left: 30px;
+            margin-bottom:30px;
 
             .content {
+                max-width: 488px;
+                min-height: 275px;
+                width: 100%;
+                margin:50px auto;
+                @include m.container(space-between, flex-start, column, nowrap);
+
                 .location {
-                    font-family: $josefin-sans;
+                    font-family: fonts.$josefin-sans;
                     font-size: 20px;
+                    line-height: 26px;
                     letter-spacing: 1.5px;
-                    color: $white;
-                    margin-bottom: 1rem;
+                    color:color.$paragraph;
                 }
 
                 .heading {
-                    font-family: $josefin-sans;
+                    font-family: fonts.$josefin-sans;
                     font-size: 20px;
-                    color: $white;
-                    margin-bottom: 1.5rem;
+                    line-height: 26px;
+                    color:color.$white;
                 }
 
                 .info {
-                    font-family: $josefin-sans;
-                    font-size: 16px;
-                    line-height: 26px;
-                    color: $white;
-                    margin-bottom: 2rem;
+                    @include m.p;
                 }
 
                 .cta {
-                    @include button;
+                    @include m.btn;
                 }
-            }
-        }
-    }
-
-    @include responsive(tablet) {
-        .content-container {
-            justify-content: center;
-            
-            .box {
-                max-width: 100%;
             }
         }
     }

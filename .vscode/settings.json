@@ -3,11 +3,14 @@
         {
             "format": "compressed",
             "extensionName": ".min.css",
-            "savePath": "./css"
+            "savePath": "/./css"
         }
     ],
     "liveSassCompile.settings.generateMap": false,
     "liveSassCompile.settings.includeItems": [
-        "../Scss/index.scss"
-    ]
+        "/./Scss/index.scss"
+    ],
+    "editor.wordWrapColumn": 999999,
+    "html.format.wrapLineLength": 999999,
+    "editor.wordWrap": "off"
 }

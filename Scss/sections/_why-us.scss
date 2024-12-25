@@ -6,7 +6,7 @@
     max-width: 100vw;
     width: 100%;
     min-height: 685px;
-    background-image: url(/img/Rectangle\ 41444.png);
+    background-image: url(/img/rooftops.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,53 +15,57 @@
     align-items: center;
 
     .content_container {
-        @include m.flex(row, space-between, center);
+        @include m.container(space-between, center, wrap);
+        min-height: 430px ;
         max-width: 1120px;
         width: 100%;
         margin: auto;
-        gap: 4rem;
 
         &-body {
+            @include m.container(space-between, flex-start, column, nowrap);
             max-width: 560px;
+            min-height: 343px;
             width: 100%;
+
 
             .heading {
                 font-family: fonts.$aleo;
                 font-size: 36px;
                 line-height: 26px;
-                margin-bottom: 2rem;
+                margin-top: 16px;
+                color: color.$white;
             }
 
             .info {
                 font-family: fonts.$josefin-sans;
                 font-size: 16px;
                 line-height: 26px;
-                letter-spacing: 1.6px;
+                margin-top: 16px;
+                margin-bottom: 16px;
                 color: color.$paragraph;
-                margin-bottom: 1.5rem;
             }
 
             .cta {
                 @include m.btn;
-                margin-top: 2rem;
+                
             }
         }
 
         .photo_container {
-            @include m.flex(column, center, flex-start);
-            gap: 1rem;
+            @include m.container(space-between, flex-start, column, nowrap);
             max-width: 440px;
             width: 100%;
+            min-height: 450px;
+            gap: 10px;
+            
 
-            img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
+            .bottom-img {
+                align-self: flex-end;
             }
         }
     }
 
-    @include responsive(tablet) {
+    @include m.responsive(tablet) {
         .content_container {
             flex-direction: column;
             padding: 0 1rem;

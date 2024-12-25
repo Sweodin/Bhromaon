@@ -6,7 +6,7 @@
     max-width: 100vw;
     min-height: 731px;
     width: 100%;
-    background-image: url(../image/testimonial-bg-l.png);
+    background-image: url(/img/manoncliff.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,7 +16,7 @@
             max-width: 1110px;
             min-height: 404px;
             width: 100%;
-            @include container (space-between, center, column, wrap);
+            @include m.container (space-between, center, column, wrap);
             margin:auto;
 
             .heading{
@@ -25,7 +25,7 @@
                 width: 100%;
 
                 .head{
-                    @include h2;
+                    @include m.h2;
                 }
             }
 
@@ -33,28 +33,28 @@
                 max-width: 1110px;
                 min-height: 287px;
                 width: 100%;
-                @include container(space-between, center, row, wrap);
+                @include m.container(space-between, center, row, wrap);
 
                 .review-container{
                     max-width: 581px;
                     min-height: 199px;
                     width: 100%;
-                    @include container(space-between, center, column, wrap);
+                    @include m.container(space-between, center, column, wrap);
                 
                     .name{
-                        font-family: $josefin-sans;
+                        font-family: fonts.$josefin-sans;
                         font-size: 20px;
                         line-height: 26px;
-                        color:$review;
+                        color:color.$review;
                     }
 
                     .info i{
                         font-size:60px;
-                        color:$quote;
+                        color:color.$quote;
                     }
 
                     .info{
-                        @include p;
+                        @include m.p;
                     }
                 }
             }
