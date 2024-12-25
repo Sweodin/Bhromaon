@@ -1,0 +1,56 @@
+@use '../variables/color' as color;
+@use '../variables/fonts' as fonts;
+@use '../mixins/mixin' as m;
+
+.icons-background {
+    max-width: 100vw;
+    width: 100%;
+    min-height: 340px;
+    background-color: color.$navbar;
+    padding: 2rem 0;
+
+    .content {
+        @include flex(row, space-around, center);
+        max-width: 1110px;
+        width: 100%;
+        margin: auto;
+        padding: 2rem;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .card {
+            @include flex(column, center, center);
+            gap: 1rem;
+            text-align: center;
+
+            .fa-solid, .fa-regular {
+                font-size: 3rem;
+                color: $white;
+
+                &.blue {
+                    color: #00A2FF;
+                }
+
+                &.red {
+                    color: #FF0000;
+                }
+            }
+
+            &-text {
+                font-family: $aleo;
+                font-size: 36px;
+                color: $white;
+            }
+        }
+    }
+
+    @include responsive(mobile) {
+        .content {
+            flex-direction: column;
+            
+            .card {
+                width: 100%;
+            }
+        }
+    }
+}

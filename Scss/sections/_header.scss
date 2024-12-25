@@ -1,0 +1,150 @@
+@use '../variables/color' as color;
+@use '../variables/fonts' as fonts;
+@use '../mixins/mixin' as m;
+
+header{
+    max-width: 100vw;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(/img/image\ main.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .wrapper{
+        max-width: 653px;
+        min-height: 100vh;
+        width: 100%;
+        @include m.header-container(center, center, column, nowrap);
+
+        .content__container{
+            max-width: 653px;
+            min-height: 341px;
+            width: 100%;
+            @include m.container(space-between, center, column, nowrap);
+
+            &-logo{
+                max-width: 372px;
+                min-height: 76px;
+                width: 100%;
+
+                .logo{
+                    @include m.h1;
+                }
+
+                .quote{
+                    font-family: fonts.$josefin-sans;
+                    font-size:22px;
+                    line-height: 26px;
+                    letter-spacing: 6.82px;
+                    text-align: center;
+                    color: color.$white;
+                }
+            }
+
+            .search-bar{
+                max-width: 653px;
+                width: 100%;
+                min-height: 63px;
+                @include m.container(center,center,row,nowrap);
+
+                input{
+                    max-width: 500px;
+                    min-height: 60px;
+                    width: 100%;
+                    text-align: center;
+                    font-family: fonts.$josefin-sans;
+                    font-size:14px;
+                    line-height: 26px;
+                    letter-spacing: 2.8px;
+                    color: color.$input-txt;
+                }
+
+                .btn{
+                    @include m.btn;
+                    max-width: 150px;
+                    min-height: 65px;
+                    border: 1px solid color.$white;
+                    transition: 0.3s ease-in-out;
+
+                    &:hover{
+                        background-color: color.$btn-hover;
+                    }
+
+                    &:active{
+                        background-color: color.$btn-active;
+                    }
+                }
+            }
+            .cta{
+                max-width: 108px;
+                width: 100%;
+                min-height: 46px;
+                @include m.container(space-between, center,column, nowrap);
+
+                &-text{
+                    color: color.$white;
+                    font-family: fonts.$josefin-sans;
+                    font-size: 14px;
+                    line-height: 26px;
+                    letter-spacing: 2.8px;
+                    text-align: center;
+                }
+
+                .fa-solid{
+                    color: color.$white;
+                }
+            }
+        }
+    }
+
+    .navigation-background{
+        background-color: color.$navbar;
+        max-width: 100%;
+        min-height: 80px;
+        width: 100%;
+        display: flex;
+
+        .navigation-bar{
+            max-width: 1120px;
+            min-height: 20px;
+            width: 100%;
+            margin:auto;
+            @include m.container(space-between, center, row, nowrap);
+        }
+
+        .logo{
+            h3{
+                @include m.h3;
+            }
+        }
+
+        .list{
+            display: flex;
+            gap:20px;
+            list-style: none;
+
+            .link{
+                text-decoration: none;
+                color: color.$white;
+                font-style: fonts.$aleo;
+                font-size:15px;
+                line-height:26px;
+
+                &:hover{
+                    color: color.$link-hover;
+                }
+            }
+        }
+
+        .menu{
+            font-size:30px;
+            color: color.$white;
+            display: none;
+        }
+    }
+}

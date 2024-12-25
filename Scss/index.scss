@@ -1,0 +1,34 @@
+ /*----- Variables -----*/
+
+ @use 'variables/color' as color;
+ @use 'variables/fonts' as fonts;
+ 
+  /*----- Mixins -----*/
+
+ @use 'mixins/mixin' as m;
+ 
+  /*----- Normalize -----*/
+
+ @use 'normalize';
+ 
+  /*----- Sections -----*/
+
+ @use 'sections/header' as header;
+ @use 'sections/whyus' as whyus;
+ @use 'sections/icons' as icons;
+ @use 'sections/house' as house;
+ @use 'sections/background-house' as background-house;
+ @use 'sections/review' as review;
+ @use 'sections/footer' as footer;
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ 
+ body {
+     max-width: 1700px;
+     width: 100%;
+     margin: auto;
+ }
